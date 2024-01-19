@@ -1,24 +1,9 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8" />
-    <title>PHPPAGINA</title>
-    <style>
-
-    </style>
-</head>
-
-<body>
-    <div>  
-         <?php 
-
-?>  
-
-
-    
-    <a href="Pagina.html" class="botao">Voltar</a>
-
-    </div>
-</body>
-</html>
+<?php
+// var_dump($_POST['tNome']);
+$nome = $_POST['tNome'];
+$idade = $_POST['tIdade'];
+$estado = $_POST['tEstado'];
+$telefone = $_POST['tTelefone'];
+$mail = $_POST['tMail'];
+echo $nome . $idade . $estado . $telefone . $mail . '<br/>'; 
+echo '<a href="Pagina.html">Voltar</a>';
