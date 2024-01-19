@@ -17,7 +17,7 @@
 
 
     
-    <div>
+    <a href="Pagina.html" class="botao">Voltar</a>
 
     </div>
 </body>
