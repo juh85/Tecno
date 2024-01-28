@@ -43,6 +43,7 @@
 
             </hgroup>
 
+
             <!-- <nav id="menu">
                 <h1>Menu</h1>
                 <ul>
@@ -50,6 +51,7 @@
                     <li>Formulario</li>
                 </ul>
             </nav> -->
+            
         </header>
         <section id="secao">
             <article id="noticia-pricipal">

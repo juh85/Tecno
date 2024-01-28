@@ -17,6 +17,12 @@
     }
 </style>
 
+<!-- IMPORTAÇÕES TABELA -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Inclua os arquivos CSS e JS do DataTables -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+
 <?php
 include 'scripts/conexao.php';
 
@@ -35,29 +41,39 @@ $conn->close();
 // echo $resposta[0]['nome']; --caso nao montar foreach ou for para acessar o array
 
 ?>
-<table>
-    <tr>
-        <th>Nome</th>
-        <th>Nascimento</th>
-        <th>Estado</th>
-        <th>Telefone</th>
-        <th>Email</th>
-    </tr>
-    <?php
-    foreach ($resposta as $dados) {
-        echo '<tr>';
-        echo '<td>' . $dados["nome"] . '</td>';
-        echo '<td>' . date('d/m/Y',  strtotime($dados["dtnascimento"] )) . '</td>';
-        echo '<td>' . $dados["estado"] . '</td>';
-        echo '<td>' . $dados["telefone"] . '</td>';
-        echo '<td>' . $dados["email"] . '</td>';
-        echo '</tr>';
-    }
-    ?>
+<a href="admin.php">Area Administrativa</a>
+<table id='tabelaC'>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Nascimento</th>
+            <th>Estado</th>
+            <th>Telefone</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        foreach ($resposta as $dados) {
+            echo '<tr>';
+            echo '<td>' . $dados["nome"] . '</td>';
+            echo '<td>' . date('d/m/Y',  strtotime($dados["dtnascimento"])) . '</td>';
+            echo '<td>' . $dados["estado"] . '</td>';
+            echo '<td>' . $dados["telefone"] . '</td>';
+            echo '<td>' . $dados["email"] . '</td>';
+            echo '</tr>';
+        }
+        ?>
+    </tbody>
 </table>
-<br/>
-<a href="index.php">Voltar</a>
+
+
+<script>
+    $('#tabelaC').dataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Portuguese-Brasil.json" // Inclua o arquivo de tradução para português
+        }
+    });
+</script>
 
 <!-- alt + shift + F //deixa bonito -->
-
-

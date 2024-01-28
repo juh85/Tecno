@@ -39,10 +39,6 @@
             cursor: pointer;
 
         }
-
-        a:hover {
-            background-color: rgba(0, 0, 0, .2);
-        }
     </style>
 
 </head>
@@ -50,7 +46,7 @@
 <body>
     <div id="admin">
         <h1 id="tit">Area Administrativa</h1>
-
+        <p>Bem-vindo a Area Administrativa</p>
         <button><a href='listarCadastro.php'>Listar Cadastro</a></button>
         <button><a href='cadastrarUsuario.php'>Cadastrar Usuario</a></button>
         <button><a href='listarUsuario.php'> Listar Usuario</a></button>

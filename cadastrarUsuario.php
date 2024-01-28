@@ -54,7 +54,7 @@
             background-color: #45a049;
         }
     </style>
- </style>
+    </style>
     <!-- Importar jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <!-- Importar mascara do jQuery -->
@@ -70,14 +70,12 @@
 <body>
     <div id="cad">
         <h1 id="tit">Cadastrar Usuario</h1>
-        <form action="/scripts/inserirUsuario.php" method="post">
+        <form action="scripts/inserirUsuario.php" method="post">
             <p><label for="cNome"></label> Nome Completo:<input type="text" name="tNome" id="cNome">
             </p>
             <p><label for="cCpf"></label> CPF:<input type="text" name="tCpf" id="cCpf">
             </p>
             <p><label for="cEmail"></label> Email:<input type="text" name="tEmail" id="cEmail">
-            </p>
-            <p><label for="cMail"></label> Confirme seu email:<input type="text" name="tMail" id="cMail">
             </p>
             <p><label for="cSenha"></label>Senha:<input type="password" name="tSenha" id="cSenha">
             </p>
@@ -89,4 +87,3 @@
         </form>
     </div>
 </body>
-
