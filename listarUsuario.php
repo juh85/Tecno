@@ -33,7 +33,7 @@ $resposta = $result->fetch_all(MYSQLI_ASSOC);
 
 $conn->close();
 
-if (isset($_SESSION)) {
+if (isset($_SESSION["alertaUsuario"])) {
     if ($_SESSION["alertaUsuario"] == 'success') {
         $successMessage = 'Solicitação processada com sucesso';
     } elseif ($_SESSION["alertaUsuario"] == 'error') {
@@ -84,7 +84,7 @@ if (isset($_SESSION)) {
                         echo '<td>' . formatar_cpf_cnpj($dados["cpf"]) . '</td>';
                         echo '<td>' . $dados["email"] . '</td>';
                         echo '<td> <a href="editarUsuario.php?id=' . $dados["id_usuario"] . '">Editar</a> /
-                        <a href="deletarUsuario.php?id=' . $dados["id_usuario"] . '" onclick="return confirm(\'Tem certeza que deseja deletar este usuário?\')">Deletar</a> 
+                        <button type="button" class="apagarUsu" name="' . $dados["id_usuario"] . '" style="margin-top:3px;">Excluir</button> 
                         </td>';
                         echo '</tr>';
                     }
@@ -140,4 +140,17 @@ if (isset($_SESSION)) {
                     }, 4000);
                 }
             });
+
+            $('.apagarUsu').click(function() {
+                var idUsu = $(this).attr("name");
+                $.ajax({
+                    type: "POST",
+                    data: {
+                        id: idUsu,
+                    },
+                    url: 'scripts/deletarUsuario.php'
+                }).done(function(resposta) {
+                    alert(resposta)
+                })
+            })
         </script>
