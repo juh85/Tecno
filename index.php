@@ -35,24 +35,17 @@
     // var_dump($resultEstados);
 
     ?>
+
     <div id="corpo">
         <header id="cabecalho">
             <hgroup>
                 <h1 id="titulo">Tudo em Desenvolvimento</h1>
                 <h2 id="subtitulo">Descubra tudo que esta em desenvolvimento hoje no mundo</h2>
-
             </hgroup>
-
-
-            <!-- <nav id="menu">
-                <h1>Menu</h1>
-                <ul>
-                    <li>Home</li>
-                    <li>Formulario</li>
-                </ul>
-            </nav> -->
             
+        
         </header>
+        
         <section id="secao">
             <article id="noticia-pricipal">
                 <header id="cabecalho-artigo">
