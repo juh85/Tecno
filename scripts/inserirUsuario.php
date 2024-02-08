@@ -26,5 +26,11 @@ if ($conn->query($sqlInsertCad) === TRUE) {
 // Fechar a conexão
 $conn->close();
 
+$redirectUrl = '../admin.php';
+header('Location: ' . $redirectUrl);
+
 echo '<a href="../admin.php">Voltar</a>';
 ?>
+
+
+ 
