@@ -151,6 +151,9 @@ if (isset($_SESSION["alertaUsuario"])) {
                     url: 'scripts/deletarUsuario.php'
                 }).done(function(resposta) {
                     alert(resposta)
+                    setTimeout(function() {
+                        window.location.reload(true);
+                    }, 1000);
                 })
             })
         </script>

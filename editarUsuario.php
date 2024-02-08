@@ -79,7 +79,7 @@ if (isset($idEditUsu)) {
             background-color: #45a049;
         }
     </style>
-    </style>
+   
     <!-- Importar jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <!-- Importar mascara do jQuery -->
@@ -103,7 +103,7 @@ if (isset($idEditUsu)) {
             </p>
             <p><label for="cEmail"></label> Email:<input type="text" name="tEmail" id="cEmail" value="<?php echo $email; ?>">
             </p>
-            <input type="submit" value="Editar Usuario" id="botao">
+            <input type="submit" value="Editar Usuario" id="botao"/>
 
         </form>
     </div>
