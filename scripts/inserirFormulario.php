@@ -14,15 +14,14 @@ values ('$nome', '$nascimento', '$estado', '$telefone', '$mail')";
 
 // Executar a query de inserção
 if ($conn->query($sqlInsert) === TRUE) {
-    echo "Registro inserido com sucesso.";
+    echo "Cadastro realizado com sucesso.";
 } else {
-    echo "Erro ao inserir registro: " . $conn->error;
+    echo "Falha ao cadastrar, Tente novamente.";
 }
 // Fechar a conexão
 $conn->close();
 
-echo '<br/> <a href="../login.php"> Listar Cadastro</a> <br/>'; 
-echo '<a href="../index.php">Voltar</a>';
+
 ?>
 
 
