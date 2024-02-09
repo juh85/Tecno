@@ -25,6 +25,7 @@
 
 <?php
 include 'scripts/conexao.php';
+include 'scripts/verificaLogado.php';
 
 $sql = "SELECT estado.id as estado_id, estado.estado as nome_estado,dados.* FROM dados INNER JOIN estado ON dados.estado = estado.id";
 $result = $conn->query($sql);

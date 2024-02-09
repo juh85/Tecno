@@ -1,4 +1,5 @@
 <?php
+include 'scripts/verificaLogado.php';
 if (isset($_GET['id'])) {
     $idEditUsu = filter_input(INPUT_GET, 'id', FILTER_DEFAULT);
 }

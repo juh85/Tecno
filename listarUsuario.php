@@ -25,6 +25,8 @@
 session_start();
 include 'scripts/conexao.php';
 include 'scripts/funcoes.php';
+include 'scripts/verificaLogado.php';
+
 $sqlUS = "SELECT * FROM usuario";
 $result = $conn->query($sqlUS);
 

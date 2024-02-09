@@ -1,5 +1,7 @@
 <?php
 include 'conexao.php';
+include 'verificaLogado.php';
+
 if (isset($_POST['id'])) {
     $idDelCad = filter_input(INPUT_POST, 'id', FILTER_DEFAULT); //protecao contra terceiros ou sem $_GET['id']
 }

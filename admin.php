@@ -1,3 +1,6 @@
+<?php 
+include 'scripts/verificaLogado.php';
+?>
 <head>
     <meta charset="UTF-8">
     <title>Area Administrativa</title>
@@ -46,7 +49,9 @@
 <body>
     <div id="admin">
         <h1 id="tit">Area Administrativa</h1>
-        <p>Bem-vindo a Area Administrativa</p>
+        <p>Bem-vindo a Area Administrativa, <?php echo $_SESSION['nome_usuario'];?> 
+        <button><a href='scripts/logout.php'>SAIR</a></button></p> 
+
         <button><a href='listarCadastro.php'>Listar Cadastro</a></button>
         <button><a href='cadastrarUsuario.php'>Cadastrar Usuario</a></button>
         <button><a href='listarUsuario.php'> Listar Usuario</a></button>

@@ -1,5 +1,6 @@
 <?php
 include 'scripts/conexao.php';
+include 'scripts/verificaLogado.php';
 if (isset($_GET['id'])) {
     $idEditCad = filter_input(INPUT_GET, 'id', FILTER_DEFAULT);
 }

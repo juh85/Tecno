@@ -1,6 +1,7 @@
 <?php
 // Inserir o cadastro
 include 'conexao.php';
+include 'verificaLogado.php';
 $nome = $_POST['tNome'];
 $cpf = $_POST['tCpf'];
 $email = $_POST['tEmail'];

@@ -2,6 +2,7 @@
 session_start();
 // Inserir o cadastro
 include 'conexao.php';
+include 'verificaLogado.php';
 $nome = $_POST['tNome'];
 $email = $_POST['tEmail'];
 $id = $_POST['tId'];
