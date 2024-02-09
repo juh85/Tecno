@@ -13,6 +13,13 @@ if ($result) {
     if ($result->num_rows > 0) {
         // Usuário encontrado, $resposta contém os resultados da consulta
         $resposta = $result->fetch_all(MYSQLI_ASSOC);
+
+        #CRIAR SESSAO E ARMAZENAR LOGIN
+        session_start();
+        $_SESSION['login'] = true;
+        $_SESSION['cpf_usuario'] = $resposta[0]['cpf'];
+        $_SESSION['nome_usuario'] = $resposta[0]['nome'];
+
         // Redireciona para a página desejada
         header("Location: ../admin.php");
         exit();

@@ -79,7 +79,6 @@
             <label for="cCpf">CPF:</label><input type="text" name="tCpf" id="cCpf" required> 
             <label for="cPassword">Senha: </label><input type="password" name="tPassword" id="cPassword" required>
             <input type="submit" id="botao" value="Login" />
-            <a href="admin.php"></a>
         </form>
     </div>
 </body>
