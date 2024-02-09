@@ -19,12 +19,12 @@ values('$cpf', '$senha', '$nome', '$email')";
 
 // Executar a query de inserção
 if ($conn->query($sqlInsertCad) === TRUE) {
-    echo "Registro inserido com sucesso.";
+    echo "Registro inserido com sucesso." ;
 } else {
     echo "Erro ao inserir registro: " . $conn->error;
 }
 // Fechar a conexão
-$conn->close();
+$conn->close(); 
 
 $redirectUrl = '../admin.php';
 header('Location: ' . $redirectUrl);
