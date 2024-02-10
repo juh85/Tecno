@@ -20,17 +20,16 @@ values('$cpf', '$senha', '$nome', '$email')";
 
 // Executar a query de inserção
 if ($conn->query($sqlInsertCad) === TRUE) {
-    echo "Registro inserido com sucesso." ;
+    $_SESSION["alertaUsuario"] = 'success';
+    
 } else {
-    echo "Erro ao inserir registro: " . $conn->error;
+    $_SESSION["alertaUsuario"] = 'error';
 }
 // Fechar a conexão
-$conn->close(); 
-
-$redirectUrl = '../admin.php';
+$conn->close();
+$redirectUrl = '../listarUsuario.php';
 header('Location: ' . $redirectUrl);
 
-echo '<a href="../admin.php">Voltar</a>';
 ?>
 
 

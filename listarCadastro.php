@@ -1,24 +1,11 @@
 <style>
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-    }
 
-    th,
-    td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
-    }
-
-    th {
-        background-color: #f2f2f2;
-    }
 </style>
 
 <!-- IMPORTAÇÕES TABELA -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Importar Bootstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <!-- Inclua os arquivos CSS e JS do DataTables -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
@@ -49,67 +36,69 @@ if (isset($_SESSION["alertaUsuario"])) {
     unset($_SESSION["alertaUsuario"]);
 }
 ?>
-
-<a href="admin.php">Area Administrativa</a>
-<?php
-if (isset($successMessage)) {
-    echo '
-                <div id="alert-success" class="alert alert-success alert-dismissible">
+<div class="container mt-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="admin.php">Pagina Inicial</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Listar Cadastro</li>
+        </ol>
+    </nav>
+    <?php
+    if (isset($successMessage)) {
+        echo '<div id="alert-success" class="alert alert-success alert-dismissible">
                     ' . $successMessage . '
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                </div>
-            ';
-} elseif (isset($errorMessage)) {
-    echo '
-                <div id="alert-error" class="alert alert-danger alert-dismissible">
+                </div>';
+    } elseif (isset($errorMessage)) {
+        echo '<div id="alert-error" class="alert alert-danger alert-dismissible">
                     ' . $errorMessage . '
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                </div>
-            ';
-}
-?>
-<table id='tabelaC'>
-    <thead>
-        <tr>
-            <th>Nome</th>
-            <th>Nascimento</th>
-            <th>Estado</th>
-            <th>Telefone</th>
-            <th>Email</th>
-            <th>Opções</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php
-        foreach ($resposta as $dados) {
-            echo '<tr>';
-            echo '<td>' . $dados["nome"] . '</td>';
-            echo '<td>' . date('d/m/Y',  strtotime($dados["dtnascimento"])) . '</td>';
-            echo '<td>' . $dados["nome_estado"] . '</td>';
-            echo '<td>' . $dados["telefone"] . '</td>';
-            echo '<td>' . $dados["email"] . '</td>';
-            echo '<td> <a href= "editarCadastro.php?id=' . $dados["id"] . '">Editar</a> / 
-            <button type="button" class="apagaCad" name="' . $dados["id"] . '" style="margin-top:3px;">Excluir </button>
+                </div>';
+    }
+    ?>
+    <div class='table-responsive-sm'>
+        <table id='tabelaC' class="table table-striped table-bordered" style="width: 99.8%;">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Nascimento</th>
+                    <th>Estado</th>
+                    <th>Telefone</th>
+                    <th>Email</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+            foreach ($resposta as $dados) {
+                echo '<tr>';
+                echo '<td>' . $dados["nome"] . '</td>';
+                echo '<td>' . date('d/m/Y',  strtotime($dados["dtnascimento"])) . '</td>';
+                echo '<td>' . $dados["nome_estado"] . '</td>';
+                echo '<td>' . $dados["telefone"] . '</td>';
+                echo '<td>' . $dados["email"] . '</td>';
+                echo '<td> <a href= "editarCadastro.php?id=' . $dados["id"] . '" class="btn btn-primary btn-sm">Editar</a>  
+            <button type="button" class="apagaCad btn btn-danger btn-sm" name="' . $dados["id"] . '">Excluir </button>
              </td>';
-            echo '</tr>';
-        }
-        ?>
-    </tbody>
-</table>
+                echo '</tr>';
+            }
+            ?>
+            </tbody>
+        </table>
+    </div>
 
-
-<script>
+    <script>
     $('#tabelaC').dataTable({
         "language": {
             "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Portuguese-Brasil.json" // Inclua o arquivo de tradução para português
         }
     });
-</script>
-<script type="text/javascript">
+    </script>
+    <script type="text/javascript">
     $(document).ready(function() {
         // Fecha o alerta ao clicar no botão de fechar (X)
         $('#alert-success .close').on('click', function() {
@@ -163,5 +152,5 @@ if (isset($successMessage)) {
 
         })
     })
-</script>
-<!-- alt + shift + F //deixa bonito -->
+    </script>
+    <!-- alt + shift + F //deixa bonito -->

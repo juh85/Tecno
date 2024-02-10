@@ -1,63 +1,28 @@
-<?php 
+<?php
 include 'scripts/verificaLogado.php';
 ?>
+
 <head>
     <meta charset="UTF-8">
     <title>Cadastrar Usuario</title>
 
     <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: white;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-    }
-
     #cad {
+        margin: 0 auto;
+        margin-top: 10px;
+        padding: 30px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
         background-color: rgb(189, 209, 221);
-        width: 30%;
-        margin: 10%;
-        float: left;
-        justify-content: center;
-        padding: 20px;
-        border-radius: 6px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     #tit {
         text-align: center;
-        color: rgba(0, 0, 0, .8);
-
-    }
-
-    form {
-        display: flex;
-        flex-direction: column;
-        border-top: solid gray;
-        padding: 10px;
-
-
-    }
-
-    input {
-        width: 100%;
-        padding: 4px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-
-    #botao {
-        padding: 15px;
-    }
-
-    #botao:hover {
-        background-color: #45a049;
+        margin-bottom: 20px;
     }
     </style>
-    </style>
+    <!-- Importar Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Importar jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <!-- Importar mascara do jQuery -->
@@ -71,24 +36,43 @@ include 'scripts/verificaLogado.php';
 </head>
 
 <body>
-    <div id="cad">
-        <h1 id="tit">Cadastrar Usuario</h1>
-        <form action="scripts/inserirUsuario.php" method="post">
-            <p><label for="cNome"></label> Nome Completo:<input type="text" name="tNome" id="cNome">
-            </p>
-            <p><label for="cCpf"></label> CPF:<input type="text" name="tCpf" id="cCpf">
-            </p>
-            <p><label for="cEmail"></label> Email:<input type="text" name="tEmail" id="cEmail">
-            </p>
-            <p><label for="cSenha"></label>Senha:<input type="password" name="tSenha" id="cSenha">
-            </p>
-            <p><label for="cConfS"></label>Confirme sua senha:<input type="password" name="tConfS" id="cConfS">
-            </p>
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="admin.php">Pagina Inicial</a></li>
+                <li class="breadcrumb-item"><a href="listarUsuario.php">Gerenciar Usuario</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Cadastro de Usuario</li>
+            </ol>
+        </nav>
+        <div id="cad">
+            <h1 id="tit">Cadastrar Usuario</h1>
+            <form action="scripts/inserirUsuario.php" method="post">
+                <div class="form-group">
+                    <label for="cNome">Nome Completo:</label>
+                    <input class="form-control" type="text" name="tNome" id="cNome">
+                </div>
+                <div class="form-group">
+                    <label for="cCpf">CPF:</label>
+                    <input class="form-control" type="text" name="tCpf" id="cCpf">
+                </div>
+                <div class="form-group">
+                    <label for="cEmail">Email:</label>
+                    <input class="form-control" type="text" name="tEmail" id="cEmail">
+                </div>
+                <div class="form-group">
+                    <label for="cSenha">Senha:</label>
+                    <input class="form-control" type="password" name="tSenha" id="cSenha">
+                </div>
+                <div class="form-group">
+                    <label for="cConfS">Confirme sua senha:</label>
+                    <input class="form-control" type="password" name="tConfS" id="cConfS">
+                </div>
+                <div class="text-center">
+                    <input type="submit" value="Cadastrar Usuario" id="botao" class="btn btn-success ">
+                </div>
+            </form>
 
-            <input type="submit" value="Cadastrar Usuario" id="botao">
 
-        </form>
-
-
+        </div>
     </div>
 </body>
