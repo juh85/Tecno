@@ -22,10 +22,12 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
 <?php
-session_start();
+
 include 'scripts/conexao.php';
 include 'scripts/funcoes.php';
 include 'scripts/verificaLogado.php';
+if(!isset($_SESSION)){session_start();}#se não tiver sessao crie
+var_dump($_SESSION);
 
 $sqlUS = "SELECT * FROM usuario";
 $result = $conn->query($sqlUS);
@@ -41,7 +43,7 @@ if (isset($_SESSION["alertaUsuario"])) {
     } elseif ($_SESSION["alertaUsuario"] == 'error') {
         $errorMessage = 'Erro na solicitação.';
     }
-    unset($_SESSION["alertaUsuario"]);
+    unset($_SESSION["alertaUsuario"]);//limpa da sessao
 }
 ?>
 <a href="admin.php">

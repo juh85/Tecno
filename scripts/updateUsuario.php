@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 // Inserir o cadastro
 include 'conexao.php';
 include 'verificaLogado.php';
