@@ -6,6 +6,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Importar Bootstrap -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- Importar Icones -->
+<script src="https://kit.fontawesome.com/6538a247f3.js" crossorigin="anonymous"></script>
 <!-- Inclua os arquivos CSS e JS do DataTables -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
@@ -39,8 +41,8 @@ if (isset($_SESSION["alertaUsuario"])) {
 <div class="container mt-4">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="admin.php">Pagina Inicial</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Listar Cadastro</li>
+            <li class="breadcrumb-item"><a href="admin.php">Area Administrativa</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Gerenciar Cadastro</li>
         </ol>
     </nav>
     <?php
@@ -69,7 +71,7 @@ if (isset($_SESSION["alertaUsuario"])) {
                     <th>Estado</th>
                     <th>Telefone</th>
                     <th>Email</th>
-                    <th>Opções</th>
+                    <th style="width: 150px;">Opções</th>
                 </tr>
             </thead>
             <tbody>
@@ -81,8 +83,8 @@ if (isset($_SESSION["alertaUsuario"])) {
                 echo '<td>' . $dados["nome_estado"] . '</td>';
                 echo '<td>' . $dados["telefone"] . '</td>';
                 echo '<td>' . $dados["email"] . '</td>';
-                echo '<td> <a href= "editarCadastro.php?id=' . $dados["id"] . '" class="btn btn-primary btn-sm">Editar</a>  
-            <button type="button" class="apagaCad btn btn-danger btn-sm" name="' . $dados["id"] . '">Excluir </button>
+                echo '<td> <a href= "editarCadastro.php?id=' . $dados["id"] . '" class="btn btn-primary btn-sm"><i class="fa-solid fa-user-pen"></i> Editar</a>  
+            <button type="button" class="apagaCad btn btn-danger btn-sm" name="' . $dados["id"] . '"><i class="fa-solid fa-user-xmark"></i> Excluir </button>
              </td>';
                 echo '</tr>';
             }

@@ -1,60 +1,58 @@
 <?php 
 include 'scripts/verificaLogado.php';
 ?>
+
 <head>
     <meta charset="UTF-8">
     <title>Area Administrativa</title>
-
     <style>
-        body {
-            background-color: white;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
 
-        #admin {
-            background-color: rgb(189, 209, 221);
-            width: 30%;
-            margin: 15%;
-            float: left;
-            justify-content: center;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    #admin {
+        float: left;
+        justify-content: center;
+    }
 
-        #tit {
-            text-align: center;
-            color: rgba(0, 0, 0, .8);
-        }
+    #tit {
+        text-align: center;
 
-        a {
-            text-decoration: none;
-        }
-
-        button {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            cursor: pointer;
-
-        }
+    }
     </style>
+    <!-- Importar Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Importar Icones -->
+    <script src="https://kit.fontawesome.com/6538a247f3.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
     <div id="admin">
-        <h1 id="tit">Area Administrativa</h1>
-        <p>Bem-vindo a Area Administrativa, <?php echo $_SESSION['nome_usuario'];?> 
-        <button><a href='scripts/logout.php'>SAIR</a></button></p> 
-
-        <button><a href='listarCadastro.php'>Listar Cadastro</a></button>
-        <button><a href='cadastrarUsuario.php'>Cadastrar Usuario</a></button>
-        <button><a href='listarUsuario.php'> Listar Usuario</a></button>
-
-    </div>
+        <h1 id="tit" class="text-primary font-weight-light">Bem-vindo a Area Administrativa,
+            <?php echo $_SESSION['nome_usuario'];?>.</h1>
+        <div class="text-right">
+            <a class="btn btn-primary" href='scripts/logout.php'><i class="fa-solid fa-arrow-right-from-bracket"></i> SAIR</a>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card border-primary mb-3" style="max-width: 18rem;">
+                    <div class="card-body text-primary d-inline-block">
+                        <img src="fotos/Listar .png" style="margin:3%;max-width:20%;max-height:20%;">
+                        <a href='listarCadastro.php'>Gerenciar Cadastro</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card border-primary mb-3" style="max-width: 18rem;">
+                    <div class="card-body text-primary d-inline-block">
+                        <img src="fotos/Gerenciar.png" style="margin:3%;max-width:24%;max-height:25%;">
+                        <a href='listarUsuario.php'>Gerenciar Usuario</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>

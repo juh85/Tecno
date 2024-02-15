@@ -29,83 +29,59 @@ if (isset($idEditUsu)) {
     <title>Editar Usuario</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: white;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        #cad {
-            background-color: rgb(189, 209, 221);
-            width: 30%;
-            margin: 10%;
-            float: left;
-            justify-content: center;
-            padding: 20px;
-            border-radius: 6px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        #tit {
-            text-align: center;
-            color: rgba(0, 0, 0, .8);
-
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            border-top: solid gray;
-            padding: 10px;
-
-
-        }
-
-        input {
-            width: 100%;
-            padding: 4px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        #botao {
-            padding: 15px;
-        }
-
-        #botao:hover {
-            background-color: #45a049;
-        }
+    #cad {
+        padding: 0px 60px 0px 60px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: rgb(189, 209, 221);
+    }
     </style>
-   
+
     <!-- Importar jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <!-- Importar mascara do jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"></script>
+    <!-- Importar Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script>
-        $(document).ready(function() {
-            $('#cCpf').inputmask('999.999.999-99');
+    $(document).ready(function() {
+        $('#cCpf').inputmask('999.999.999-99');
 
-        })
+    })
     </script>
 </head>
 
 <body>
-    <div id="cad">
-        <h1 id="tit">Editar Usuario</h1>
-        <form action="scripts/updateUsuario.php" method="post">
-            <input type="hidden" name="tId"  value="<?php echo $idEditUsu; ?>">
-            <p><label for="cNome"></label> Nome Completo:<input type="text" name="tNome" id="cNome" value="<?php echo $nome; ?>">
-            </p>
-            <p><label for="cCpf"></label> CPF:<input type="text" name="tCpf" id="cCpf" value="<?php echo $cpf; ?>">
-            </p>
-            <p><label for="cEmail"></label> Email:<input type="text" name="tEmail" id="cEmail" value="<?php echo $email; ?>">
-            </p>
-            <input type="submit" value="Editar Usuario" id="botao"/>
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="admin.php">Area Administrativa</a></li>
+                <li class="breadcrumb-item"><a href="listarUsuario.php">Gerenciar Usuario</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Editar Usuario</li>
+            </ol>
+        </nav>
+        <div id="cad">
+            <h1 id="tit" class="font-weight-light text-center">Editar Usuario</h1>
+            <form action="scripts/updateUsuario.php" method="post">
+                <input type="hidden" name="tId" value="<?php echo $idEditUsu; ?>">
+                <div class="form-group">
+                    <label for="cNome">Nome Completo:</label>
+                    <input class="form-control" type="text" name="tNome" id="cNome" value="<?php echo $nome; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="cCpf">CPF:</label>
+                    <input class="form-control" type="text" name="tCpf" id="cCpf" value="<?php echo $cpf; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="cEmail">Email:</label>
+                    <input class="form-control" type="text" name="tEmail" id="cEmail" value="<?php echo $email; ?>">
+                </div>
+                <div class="text-center">
+                    <input type="submit" class="btn btn-success" value="Editar Usuario" id="botao" />
+                </div>
 
-        </form>
+
+            </form>
+        </div>
     </div>
 </body>

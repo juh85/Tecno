@@ -34,93 +34,84 @@ if (isset($idEditCad)) {
 
 <head>
     <meta charset="UTF-8">
-    <title>Editar Usuario</title>
+    <title>Editar Cadastro</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: white;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
+    #cad {
+        padding: 0px 60px 0px 60px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: rgb(189, 209, 221);
+    }
 
-        #cad {
-            background-color: rgb(189, 209, 221);
-            width: 30%;
-            margin: 10%;
-            float: left;
-            justify-content: center;
-            padding: 20px;
-            border-radius: 6px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        #tit {
-            text-align: center;
-            color: rgba(0, 0, 0, .8);
-
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            border-top: solid gray;
-            padding: 10px;
-
-
-        }
-
-        input {
-            width: 100%;
-            padding: 4px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        #botao {
-            padding: 15px;
-        }
-
-        #botao:hover {
-            background-color: #45a049;
-        }
     </style>
+
 
     <!-- Importar jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- Importar Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Importar mascara do jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#cCpf').inputmask('999.999.999-99');
-            $('#cTelefone').inputmask('(99)99999-9999');
+    $(document).ready(function() {
+        $('#cCpf').inputmask('999.999.999-99');
+        $('#cTelefone').inputmask('(99)99999-9999');
 
-        })
+    })
     </script>
 </head>
 
 <body>
-    <div id="cad">
-        <h1 id="tit">Editar Cadastro</h1>
-        <form action="scripts/updateCadastro.php" method="post">
-        <input type="hidden" name="tId" value="<?php echo $idEditCad; ?>">
-        <p><label for="cNome">Nome Completo</label><input type="text" name="tNome" id="cNome" value="<?php echo $nome; ?>"/></p>
-        <p><label for="cNascimento">Data de Nascimento:</label> <input type="date" name="tNascimento" id="CNascimento" value="<?php echo $nascimento; ?>"/></p>
-        <select name="tEstado" id="cEstado" required>
-            <option value="">Selecione</option>
-            <?php
-            foreach ($estados as $estadoOption) {
-                $selected = ($estadoOption["id"] == $estado) ? 'selected="selected"' : '';
-                echo '<option value="' . $estadoOption["id"] . '" ' . $selected. '>' . $estadoOption["estado"] . '</option>';
-            }
-            ?>
-        </select>
-        <p> <label for="cTelefone">Telefone: <input type="text" name="tTelefone" id="cTelefone" size="15" maxlength="15" value="<?php echo $telefone; ?>"/></label></p>
-        <p><label for="cEmail">E-mail: <input type="text" name="tEmail" id="cEmail" maxlength="50" placeholder="E-mail" value="<?php echo $email; ?>"required/></label></p>
-        <input type="submit" value="Enviar" id="botao"/>
-        </form>
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="admin.php">Area Administrativa</a></li>
+                <li class="breadcrumb-item"><a href="listarCadastro.php">Gerenciar Cadastro</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Editar Cadastro</li>
+            </ol>
+        </nav>
+        <div id="cad">
+            <h1 id="tit" class="font-weight-light text-center">Editar Cadastro</h1>
+            <form action="scripts/updateCadastro.php" method="post">
+                <input type="hidden" name="tId" value="<?php echo $idEditCad; ?>">
+
+                <div class="form-group">
+                    <label for="cNome">Nome Completo:</label>
+                    <input class="form-control" type="text" name="tNome" id="cNome" value="<?php echo $nome; ?>" />
+                </div>
+
+                <div class="form-group">
+                    <label for="cNascimento">Data de Nascimento:</label>
+                    <input class="form-control" type="date" name="tNascimento" id="CNascimento"
+                        value="<?php echo $nascimento; ?>" />
+                </div>
+                <div class="form-group">
+                    <label for="cEstado">Estado:</label>
+                    <select class="form-control" name="tEstado" id="cEstado" required>
+                        <option value="">Selecione</option>
+                        <?php
+                        foreach ($estados as $estadoOption) {
+                            $selected = ($estadoOption["id"] == $estado) ? 'selected="selected"' : '';
+                            echo '<option value="' . $estadoOption["id"] . '" ' . $selected . '>' . $estadoOption["estado"] . '</option>';
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cTelefone">Telefone:</label>
+                    <input class="form-control" type="text" name="tTelefone" id="cTelefone" size="15" maxlength="15"
+                        value="<?php echo $telefone; ?>" />
+                </div>
+                <div class="form-group">
+                    <label for="cEmail">E-mail: </label>
+                    <input class="form-control" type="text" name="tEmail" id="cEmail" maxlength="50"
+                        placeholder="E-mail" value="<?php echo $email; ?>" required />
+                </div>
+                <div class="text-center">
+                    <input type="submit" class="btn btn-success" value="Enviar" id="botao" />
+                </div>
+            </form>
+        </div>
     </div>
 </body>

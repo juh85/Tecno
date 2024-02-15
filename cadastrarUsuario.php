@@ -8,17 +8,10 @@ include 'scripts/verificaLogado.php';
 
     <style>
     #cad {
-        margin: 0 auto;
-        margin-top: 10px;
-        padding: 30px;
+        padding: 0px 60px 0px 60px;
         border: 1px solid #ccc;
         border-radius: 5px;
         background-color: rgb(189, 209, 221);
-    }
-
-    #tit {
-        text-align: center;
-        margin-bottom: 20px;
     }
     </style>
     <!-- Importar Bootstrap -->
@@ -39,13 +32,13 @@ include 'scripts/verificaLogado.php';
     <div class="container mt-4">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="admin.php">Pagina Inicial</a></li>
+                <li class="breadcrumb-item"><a href="admin.php">Area Administrativa</a></li>
                 <li class="breadcrumb-item"><a href="listarUsuario.php">Gerenciar Usuario</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Cadastro de Usuario</li>
             </ol>
         </nav>
         <div id="cad">
-            <h1 id="tit">Cadastrar Usuario</h1>
+            <h1 id="tit" class="font-weight-light text-center">Cadastrar Usuario</h1>
             <form action="scripts/inserirUsuario.php" method="post">
                 <div class="form-group">
                     <label for="cNome">Nome Completo:</label>
