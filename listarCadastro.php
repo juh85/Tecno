@@ -45,6 +45,10 @@ if (isset($_SESSION["alertaUsuario"])) {
             <li class="breadcrumb-item active" aria-current="page">Gerenciar Cadastro</li>
         </ol>
     </nav>
+    <div class="text-right">
+        <a class="btn btn-outline-primary" href=""><i class="fa-solid fa-print"></i> Gerar
+            Relatorio </a>
+    </div><br />
     <?php
     if (isset($successMessage)) {
         echo '<div id="alert-success" class="alert alert-success alert-dismissible">

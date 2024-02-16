@@ -15,8 +15,10 @@ if($senha != $senhaConf){
     echo '<a href="../admin.php">Voltar</a>';
     die;
 }
+$senhacriptografada = md5($senha);
+
 $sqlInsertCad="insert into usuario (cpf, senha, nome, email)
-values('$cpf', '$senha', '$nome', '$email')";
+values('$cpf', '$senhacriptografada', '$nome', '$email')";
 
 // Executar a query de inserção
 if ($conn->query($sqlInsertCad) === TRUE) {

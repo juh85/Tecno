@@ -2,9 +2,10 @@
 $cpf = $_POST['tCpf'];
 $senha = $_POST['tPassword'];
 include 'conexao.php';
+$senhacriptografada = md5($senha);
 
 $cpf = preg_replace('/[^0-9]/', '', $cpf); // limpar cpf para somente numero
-$sql = "SELECT * FROM usuario where cpf='$cpf' and senha='$senha'";
+$sql = "SELECT * FROM usuario where cpf='$cpf' and senha='$senhacriptografada'";
 
 $result = $conn->query($sql);
 

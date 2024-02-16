@@ -44,9 +44,16 @@ if (isset($_SESSION["alertaUsuario"])) {
             <li class="breadcrumb-item active" aria-current="page">Gerenciar Usuario</li>
         </ol>
     </nav>
-    <div class="text-right">
-        <a class="btn btn-outline-primary" href="cadastrarUsuario.php"><i class="fa-solid fa-user-plus"></i> Cadastrar
-            novo Usuario</a>
+    <div class="row">
+        <div class="col text-right">
+            <a class="btn btn-outline-primary" href="cadastrarUsuario.php"><i class="fa-solid fa-user-plus"></i>
+                Cadastrar
+                novo Usuario</a>
+        </div>
+        <div class="text-right">
+            <a class="btn btn-outline-primary" href=""><i class="fa-solid fa-print"></i> Gerar
+                Relatorio</a>
+        </div>
     </div>
     <br>
 
