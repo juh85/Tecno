@@ -51,7 +51,7 @@ if (isset($_SESSION["alertaUsuario"])) {
                 novo Usuario</a>
         </div>
         <div class="text-right">
-            <a class="btn btn-outline-primary" href=""><i class="fa-solid fa-print"></i> Gerar
+            <a class="btn btn-outline-primary" href="relatorioUsuario.php"><i class="fa-solid fa-print"></i> Gerar
                 Relatorio</a>
         </div>
     </div>
