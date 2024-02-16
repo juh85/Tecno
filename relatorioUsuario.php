@@ -73,4 +73,4 @@ $pdf->writeHTML($html, true, false, true, false, ''); // Escrever HTML no docume
 
 $pdf->lastPage(); // Terminar o documento PDF
 
-$pdf->Output('relatorio_usuarios.pdf', 'I'); // Saída do PDF (diretamente para o navegador)
+$pdf->Output('relatorio_usuarios.pdf', 'I'); // Saída do PDF (diretamente para o navegador = I/ Baixar = D)
