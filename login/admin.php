@@ -1,5 +1,5 @@
 <?php 
-include 'scripts/verificaLogado.php';
+include 'scriptLogin/verificaLogado.php';
 ?>
 
 <head>
@@ -35,13 +35,13 @@ include 'scripts/verificaLogado.php';
         <h1 id="tit" class="text-primary font-weight-light">Bem-vindo a Area Administrativa,
             <?php echo $_SESSION['nome_usuario'];?>.</h1>
         <div class="text-right">
-            <a class="btn btn-primary" href='scripts/logout.php'><i class="fa-solid fa-arrow-right-from-bracket"></i> SAIR</a>
+            <a class="btn btn-primary" href='scriptLogin/logout.php'><i class="fa-solid fa-arrow-right-from-bracket"></i> SAIR</a>
         </div>
         <div class="row">
             <div class="col">
                 <div class="card border-primary mb-3" style="max-width: 18rem;">
                     <div class="card-body text-primary d-inline-block">
-                        <img src="fotos/Listar .png" style="margin:3%;max-width:20%;max-height:20%;">
+                        <img src="../fotos/Listar.png" style="margin:3%;max-width:20%;max-height:20%;">
                         <a href='listarCadastro.php'>Gerenciar Cadastro</a>
                     </div>
                 </div>
@@ -49,7 +49,7 @@ include 'scripts/verificaLogado.php';
             <div class="col">
                 <div class="card border-primary mb-3" style="max-width: 18rem;">
                     <div class="card-body text-primary d-inline-block">
-                        <img src="fotos/Gerenciar.png" style="margin:3%;max-width:24%;max-height:25%;">
+                        <img src="../fotos/Gerenciar.png" style="margin:3%;max-width:24%;max-height:25%;">
                         <a href='listarUsuario.php'>Gerenciar Usuario</a>
                     </div>
                 </div>

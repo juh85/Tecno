@@ -36,13 +36,7 @@ h2#subtitulo {
 
 }
 
-section#secao{
-    width: 48%;
-    display: block;
-    float: left;
-    padding-left: 1.5%;
-    border-right: 1px solid  rgba(0, 0, 0, .5);
-}
+
 
 header h3{
     color: rgba(0, 0, 0, .5);
@@ -93,44 +87,5 @@ p#legroda{
     padding-top: .5%;
     padding-bottom: .5%;
     font-family:'Times New Roman', Times, serif;
-}
-
-/*Formatação do menu */
-
-nav#menu {
-    display: block;
-}
-
-nav#menu ul {
-    list-style: none;
-    text-transform: uppercase;
-    position: absolute;
-    top: -20px;
-    left: 500px;
-}
-
-nav#menu li {
-    display: inline-block;
-    background-color: #dddddd;
-    padding: 10px;
-    margin: 2px;
-    transition: background-color 1s;
-}
-
-nav#menu li:hover {
-    background-color: #606060;
-}
-
-nav#menu h1 {
-    display: none;
-}
-
-nav#menu a {
-    color: black;
-    
-}
-
-nav#menu a:hover {
-    color: white; 
 }
 

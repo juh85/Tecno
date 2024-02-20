@@ -1,6 +1,6 @@
 <?php
-include 'scripts/conexao.php';
-include 'scripts/verificaLogado.php';
+include 'scriptLogin/conexao.php';
+include 'scriptLogin/verificaLogado.php';
 if (isset($_GET['id'])) {
     $idEditCad = filter_input(INPUT_GET, 'id', FILTER_DEFAULT);
 }
@@ -73,7 +73,7 @@ if (isset($idEditCad)) {
         </nav>
         <div id="cad">
             <h1 id="tit" class="font-weight-light text-center">Editar Cadastro</h1>
-            <form action="scripts/updateCadastro.php" method="post">
+            <form action="scriptLogin/updateCadastro.php" method="post">
                 <input type="hidden" name="tId" value="<?php echo $idEditCad; ?>">
 
                 <div class="form-group">

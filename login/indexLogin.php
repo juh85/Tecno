@@ -65,7 +65,7 @@
 <body>
     <div class="container">
         <div class="login-permissao">
-            <form action="scripts/validaLogin.php" method="post">
+            <form action="scriptLogin/validaLogin.php" method="post">
                 <h2 id="titLog" class="text-primary font-weight-light">Login</h2>
                 <div class="form-group">
                     <label for="cCpf">CPF:</label>

@@ -1,5 +1,5 @@
 <?php
-include 'scripts/verificaLogado.php';
+include 'scriptLogin/verificaLogado.php';
 ?>
 
 <head>
@@ -39,7 +39,7 @@ include 'scripts/verificaLogado.php';
         </nav>
         <div id="cad">
             <h1 id="tit" class="font-weight-light text-center">Cadastrar Usuario</h1>
-            <form action="scripts/inserirUsuario.php" method="post">
+            <form action="scriptLogin/inserirUsuario.php" method="post">
                 <div class="form-group">
                     <label for="cNome">Nome Completo:</label>
                     <input class="form-control" type="text" name="tNome" id="cNome">

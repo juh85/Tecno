@@ -1,10 +1,10 @@
 <?php
-include 'scripts/verificaLogado.php';
+include 'scriptLogin/verificaLogado.php';
 if (isset($_GET['id'])) {
     $idEditUsu = filter_input(INPUT_GET, 'id', FILTER_DEFAULT);
 }
 if (isset($idEditUsu)) {
-    include 'scripts/conexao.php';
+    include 'scriptLogin/conexao.php';
     $sqlDadosUsu = 'SELECT * FROM usuario where id_usuario="' . $idEditUsu . '"';
     $result = $conn->query($sqlDadosUsu);
     // Agora $resposta contém os resultados da consulta
@@ -62,7 +62,7 @@ if (isset($idEditUsu)) {
         </nav>
         <div id="cad">
             <h1 id="tit" class="font-weight-light text-center">Editar Usuario</h1>
-            <form action="scripts/updateUsuario.php" method="post">
+            <form action="scriptLogin/updateUsuario.php" method="post">
                 <input type="hidden" name="tId" value="<?php echo $idEditUsu; ?>">
                 <div class="form-group">
                     <label for="cNome">Nome Completo:</label>

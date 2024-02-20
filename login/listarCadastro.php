@@ -13,8 +13,8 @@
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
 
 <?php
-include 'scripts/conexao.php';
-include 'scripts/verificaLogado.php';
+include 'scriptLogin/conexao.php';
+include 'scriptLogin/verificaLogado.php';
 
 $sql = "SELECT estado.id as estado_id, estado.estado as nome_estado,dados.* FROM dados INNER JOIN estado ON dados.estado = estado.id";
 $result = $conn->query($sql);
@@ -46,7 +46,7 @@ if (isset($_SESSION["alertaUsuario"])) {
         </ol>
     </nav>
     <div class="text-right">
-        <a class="btn btn-outline-primary" href=""><i class="fa-solid fa-print"></i> Gerar
+        <a class="btn btn-outline-primary" href="relatorioCadastro.php"><i class="fa-solid fa-print"></i> Gerar
             Relatorio </a>
     </div><br />
     <?php
@@ -149,7 +149,7 @@ if (isset($_SESSION["alertaUsuario"])) {
             data: {
                 id: idCad,
             },
-            url: 'scripts/deletarCadastro.php'
+            url: 'scriptLogin/deletarCadastro.php'
         }).done(function(resposta) {
             alert(resposta)
             setTimeout(function() {

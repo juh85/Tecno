@@ -10,9 +10,9 @@
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
 <?php
 
-include 'scripts/conexao.php';
-include 'scripts/funcoes.php';
-include 'scripts/verificaLogado.php';
+include 'scriptLogin/conexao.php';
+include 'scriptLogin/funcoes.php';
+include 'scriptLogin/verificaLogado.php';
 if (!isset($_SESSION)) {
     session_start();
 } #se não tiver sessao crie
@@ -47,8 +47,7 @@ if (isset($_SESSION["alertaUsuario"])) {
     <div class="row">
         <div class="col text-right">
             <a class="btn btn-outline-primary" href="cadastrarUsuario.php"><i class="fa-solid fa-user-plus"></i>
-                Cadastrar
-                novo Usuario</a>
+                Cadastrar novo Usuario</a>
         </div>
         <div class="text-right">
             <a class="btn btn-outline-primary" href="relatorioUsuario.php"><i class="fa-solid fa-print"></i> Gerar
@@ -161,7 +160,7 @@ $('.apagarUsu').click(function() {
         data: {
             id: idUsu,
         },
-        url: 'scripts/deletarUsuario.php'
+        url: 'scriptLogin/deletarUsuario.php'
     }).done(function(resposta) {
         alert(resposta)
         setTimeout(function() {
