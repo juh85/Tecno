@@ -1,31 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<link rel="stylesheet" href="css/estilo.css" />
+<?php include 'nav.php'; ?>
 
-<head>
-    <meta charset="UTF-8" />
-    <title>Formulario</title>
-    <style>
 
-    </style>
-    <!-- Importar jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <!-- Importar mascara do jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"></script>
-    <!-- Importar Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Importar Icones -->
-    <script src="https://kit.fontawesome.com/6538a247f3.js" crossorigin="anonymous"></script>
-    <script>
-    $(document).ready(function() {
-        $('#cTelefone').inputmask('(99)99999-9999');
-
-    })
-    </script>
-</head>
-
-<body>
-    <?php
+<?php
     include 'scripts/conexao.php';
     $sqlPuxarEs = "SELECT * FROM estado";
     $result = $conn->query($sqlPuxarEs);
@@ -39,19 +15,26 @@
     // var_dump($resultEstados);
 
     ?>
-
-
-    <h1>Formulario</h1>
-    <p>Deixe seu contato para receber mais informações sobre os desenvolvimento do mundo</p>
-    <nav>
-        <fieldset id="formulario">
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-md-5">
+        <h2>Se inscreva para receber notícias</h2>
+        <p class="font-weight-light">Deixe seu contato para receber mais informações sobre os desenvolvimento do mundo</p>
+        </div>
+        <div class="col-md-7">
             <legend>Seus dados</legend>
-            <p><label for="cNome">Nome:</label> <input type="text" name="tNome" id="cNome" size="20" maxlength="30"
-                    placeholder="Nome Completo"> </p>
-            <p><label for="cNascimento">Data de Nascimento:</label> <input type="date" name="tNascimento"
-                    id="cNascimento"> </p>
-            <p><label for="cEstado">Estado:</label>
-                <select name="tEstado" id="cEstado" required>
+            <div class="form-group">
+                <label for="cNome">Nome:</label>
+                <input class="form-control" type="text" name="tNome" id="cNome" size="20" maxlength="30"
+                    placeholder="Nome Completo">
+            </div>
+            <div class="form-group">
+                <label for="cNascimento">Data de Nascimento:</label>
+                <input class="form-control" type="date" name="tNascimento" id="cNascimento">
+            </div>
+            <div class="form-group">
+                <label for="cEstado">Estado:</label>
+                <select class="form-control" name="tEstado" id="cEstado" required>
                     <option value="">Selecione</option>
                     <?php
                             foreach ($resultEstados as $estados) {
@@ -59,27 +42,29 @@
                             }
                             ?>
                 </select>
-            </p>
-            <p> <label for="cTelefone">Telefone: <input type="text" name="tTelefone" id="cTelefone" size="15"
-                        maxlength="15"></label></p>
-            <p><label for="cMail">E-mail: <input type="text" name="tMail" id="cMail" size="30" maxlength="50"
-                        placeholder="E-mail"></label></p>
-
-        </fieldset>
-        <button type="button" class="enviaForm btn btn-primary" style="margin-top:3px;">Cadastrar</button>
-
-
-        </aside>
-        <footer id="rodape">
-            <p id="legroda"> &copy; 2023 - by Juliana </p>
-        </footer>
-
-
+            </div>
+            <div class="form-group">
+                <label for="cTelefone">Telefone:</label>
+                <input class="form-control" type="text" name="tTelefone" id="cTelefone" size="15" maxlength="15">
+            </div>
+            <div class="form-group">
+                <label for="cMail">E-mail:</label>
+                <input class="form-control" type="text" name="tMail" id="cMail" size="30" maxlength="50"
+                    placeholder="E-mail">
+            </div>
+            <button type="button" class="enviaForm btn btn-primary" style="margin-top:3px;">Inscreva-se</button>
         </div>
-</body>
+        
+    </div>
+</div>
+<?php include 'footer.php'; ?>
 
-</html>
 <script>
+$(document).ready(function() {
+    $('#cTelefone').inputmask('(99)99999-9999');
+
+})
+
 $('.enviaForm').click(function() {
     var nome = $("#cNome").val();
     var nascimento = $("#cNascimento").val();
