@@ -17,11 +17,16 @@
     ?>
 <div class="container-fluid mt-4">
     <div class="row">
-        <div class="col-md-5">
+    <div class="col-md-1"></div>
+        <div class="col-md-4">
         <h2>Se inscreva para receber notícias</h2>
-        <p class="font-weight-light">Deixe seu contato para receber mais informações sobre os desenvolvimento do mundo</p>
+        <p class="font-weight-light text-justify">Deixe seu contato para receber mais informações sobre os desenvolvimento do mundo</p>
+        <div class="text-center">
+        <img class="img-fluid rounded" style="width:80%;" src="fotos/formulario.jpg">
         </div>
-        <div class="col-md-7">
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
             <legend>Seus dados</legend>
             <div class="form-group">
                 <label for="cNome">Nome:</label>
@@ -54,9 +59,11 @@
             </div>
             <button type="button" class="enviaForm btn btn-primary" style="margin-top:3px;">Inscreva-se</button>
         </div>
+        <div class="col-md-1"></div>
         
     </div>
 </div>
+</br>
 <?php include 'footer.php'; ?>
 
 <script>

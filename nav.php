@@ -26,8 +26,8 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="index.php">Inicio <span class="sr-only">(Página atual)</span></a>
+            <li class="nav-item">
+                <a class="nav-link" href="index.php">Inicio</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="formulario.php">Inscreva-se</a>
