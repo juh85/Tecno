@@ -32,6 +32,7 @@ estado varchar (50)
 ); 
 select *from estado;
 SELECT * FROM dados INNER JOIN estado ON dados.estado = estado.id;
+SELECT * FROM dados INNER JOIN estado;
 
 create table usuario (
 id_usuario int auto_increment primary key,

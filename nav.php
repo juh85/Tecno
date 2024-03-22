@@ -35,6 +35,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="sobre.php">Sobre Nós</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link btn btn-outline-secondary btn-sm" href="./login/indexLogin.php">Area Administrativa</a>
+            </li>
         </ul>
     </div>
 </nav>

@@ -109,7 +109,7 @@ if (isset($idEditCad)) {
                         placeholder="E-mail" value="<?php echo $email; ?>" required />
                 </div>
                 <div class="text-center">
-                    <input type="submit" class="btn btn-success" value="Enviar" id="botao" />
+                    <input type="submit" class="btn btn-success" value="Editar Cadastro" id="botao" />
                 </div>
             </form>
         </div>

@@ -1,9 +1,10 @@
 <?php include 'nav.php'; ?>
-<div class="container-fluid bg-dark text-white">
+<div class="container-fluid ">
     <div class="row">
         <div class="col-md-8">
+            <br />
             <!-- Define a coluna para o texto -->
-            <h2 class="font-weight-bold">Tecno a tecnologia </br>em andamento</h2>
+            <h2 class="font-weight-bold ">Tecno a tecnologia </br>em andamento</h2>
             <p class="font-weight-light" style="font-size:20px;">Fique por dentro das últimas novidades em tecnologia e
                 receba dicas e análises sobre tecnologia.</p>
         </div>
